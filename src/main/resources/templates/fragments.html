@@ -28,6 +28,7 @@
     </div>
 
     <div th:fragment="list-results">
+        <h3> <span th:text="${number}"></span> Result(s) found.</h3>
         <table th:each="job : ${jobs}" class="job-listing">
             <tr th:each="element : ${job}">
                 <td th:text="${element.key}"></td>

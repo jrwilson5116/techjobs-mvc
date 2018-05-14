@@ -36,9 +36,12 @@ public class ListController {
 
     @RequestMapping(value = "values")
     public String listColumnValues(Model model, @RequestParam String column) {
+        int numResults = 0;
 
         if (column.equals("all")) {
             ArrayList<HashMap<String, String>> jobs = JobData.findAll();
+            numResults = jobs.size();
+            model.addAttribute("number",numResults);
             model.addAttribute("title", "All Jobs");
             model.addAttribute("jobs", jobs);
             return "list-jobs";

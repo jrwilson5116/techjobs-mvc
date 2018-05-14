@@ -30,14 +30,19 @@ public class SearchController {
         model.addAttribute("columns", ListController.columnChoices);
 
         ArrayList results;
+        int numOfResults = 0;
 
         if("all".equals(searchType))
             results = JobData.findByValue(searchTerm);
         else
             results = JobData.findByColumnAndValue(searchType,searchTerm);
 
-        if(!results.isEmpty())
+        if(!results.isEmpty()) {
+            numOfResults = results.size();
             model.addAttribute("jobs", results);
+        }
+
+        model.addAttribute("number",numOfResults);
 
         return "search";
     }
