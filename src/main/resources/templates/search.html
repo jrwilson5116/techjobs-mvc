@@ -40,12 +40,10 @@
 
     <table th:each="job : ${jobs}" class="job-listing">
 
-        <div th:each="element : ${job}">
-            <tr>
-                <td th:text="${element.key}"></td>
-                <td th:text="${element.value}"></td>
-            </tr>
-        </div>
+        <tr th:each="element : ${job}">
+            <td th:text="${element.key}"></td>
+            <td th:text="${element.value}"></td>
+        </tr>
         <br/>
     </table>
 
