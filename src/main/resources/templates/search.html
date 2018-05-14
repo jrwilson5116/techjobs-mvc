@@ -38,14 +38,18 @@
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
 
-    <table th:each="job : ${jobs}" class="job-listing">
+    <!--<table th:each="job : ${jobs}" class="job-listing">-->
 
-        <tr th:each="element : ${job}">
-            <td th:text="${element.key}"></td>
-            <td th:text="${element.value}"></td>
-        </tr>
-        <br/>
-    </table>
+        <!--<tr th:each="element : ${job}">-->
+
+            <!--<td th:text="${element.key}"></td>-->
+            <!--<td th:text="${element.value}"></td>-->
+            <!---->
+        <!--</tr>-->
+
+    <!--</table>-->
+    <div th:replace="fragments :: list-results"></div>
+
 
 </div>
 
